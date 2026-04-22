@@ -4,16 +4,7 @@ import (
 	"log"
 	"os"
 	"strconv"
-
-	"github.com/joho/godotenv"
 )
-
-func init() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Println("No .env file found, using system env")
-	}
-}
 
 func GetEnv() string {
 	return getEnvironmentValue("ENV")
@@ -21,10 +12,6 @@ func GetEnv() string {
 
 func GetDataSourceURL() string {
 	return getEnvironmentValue("DATA_SOURCE_URL")
-}
-
-func GetPaymentServiceUrl() string {
-	return getEnvironmentValue("PAYMENT_SERVICE_URL")
 }
 
 func GetApplicationPort() int {
@@ -37,7 +24,6 @@ func GetApplicationPort() int {
 
 	return port
 }
-
 func getEnvironmentValue(key string) string {
 	if os.Getenv(key) == "" {
 		log.Fatalf("%s environment variable is missing.", key)

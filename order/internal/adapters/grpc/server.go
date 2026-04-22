@@ -5,8 +5,8 @@ import (
 	"log"
 	"net"
 
+	"github.com/vteja-code/microservices/generated/order"
 	"github.com/vteja-code/microservices/order/config"
-	"github.com/vteja-code/microservices/order/internal/application/domain/order"
 	"github.com/vteja-code/microservices/order/internal/ports"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"

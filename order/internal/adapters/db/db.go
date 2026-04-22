@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/vteja-code/microservices/order/internal/application/domain"
-	"gorm.io/driver/postgres"
+	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
@@ -29,7 +29,7 @@ type Adapter struct {
 
 func NewAdapter(dataSourceUrl string) (*Adapter, error) {
 
-	db, openErr := gorm.Open(postgres.Open(dataSourceUrl), &gorm.Config{})
+	db, openErr := gorm.Open(mysql.Open(dataSourceUrl), &gorm.Config{})
 	if openErr != nil {
 		return nil, fmt.Errorf("db connection error: %v", openErr)
 	}

@@ -4,8 +4,8 @@ import (
 	"context"
 
 	"github.com/gofiber/fiber/v2/log"
+	"github.com/vteja-code/microservices/generated/order"
 	"github.com/vteja-code/microservices/order/internal/application/domain"
-	"github.com/vteja-code/microservices/order/internal/application/domain/order"
 )
 
 func (a Adapter) Create(ctx context.Context, request *order.CreateOrderRequest) (*order.CreateOrderResponse, error) {
